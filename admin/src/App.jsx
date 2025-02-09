@@ -4,7 +4,6 @@ import Sidebar from './components/Sidebar'
 import { Routes, Route } from 'react-router-dom'
 import AddBlogs from './pages/AddBlogs'
 import ListBlogs from './pages/ListBlogs'
-import AddAwards from './pages/AddAwards'
 import AddConferences from './pages/AddConferences'
 import AddProjects from './pages/AddProjects'
 import AddResearchPapers from './pages/AddResearchPapers'
@@ -44,7 +43,6 @@ const App = () => {
                 <Route path='/listResearchPapers' element={<ListResearchPapers token={token}/>} />
                 <Route path='/addConferences' element={<AddConferences token={token}/>} />
                 <Route path='/ListConferences' element={<ListConferences token={token}/>} />
-                <Route path='/addAwards' element={<AddAwards token={token} />}/>
                 <Route path='/AddAchievements' element = {<AddAchievements/>}/>
                 <Route path='/ListAchievements' element = {<ListAchievements/>}/>
               </Routes>

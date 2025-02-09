@@ -7,6 +7,19 @@ const Conferences = () => {
   const { Conferences } = useContext(Context);
   console.log(Conferences); 
   const [latestConferences, setLatestConferences] = useState([]);
+  const { Search, setSearch, showsearch, setshowsearch, searchblog ,setsearchblog , searchpapers ,setsearchpapers ,
+    searchachiev ,setsearchachiev ,searchconfer ,setsearchconfer,} = useContext(Context);
+
+    const applyFilter = () => {
+      let Copy =Conferences.slice();
+      if (showsearch && searchconfer) {
+        Copy = Copy.filter(item => item.topic.toLowerCase().includes(searchconfer.toLowerCase()))
+      }
+      setLatestConferences(Copy)
+    }
+    useEffect(()=>{
+        applyFilter();
+    },[searchconfer,showsearch,Conferences])
 
   useEffect(() => {
     if (Conferences && Conferences.length > 0) {
@@ -30,7 +43,7 @@ const Conferences = () => {
             key={index}
             id={conf._id}
             videoUrl={conf.videoUrl}
-            title={conf.title}
+            title={conf.topic}
             insights={conf.insights}
             date={conf.date}
           />

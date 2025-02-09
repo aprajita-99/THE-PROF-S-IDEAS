@@ -5,8 +5,28 @@ import {assets} from '../assets/assets';
 
 const Achievements = () => {
   const {achievements} = useContext(Context);
+  const [ach , setach] = useState([]);
+  const { Search, setSearch, showsearch, setshowsearch, searchblog ,setsearchblog , searchpapers ,setsearchpapers ,
+      searchachiev ,setsearchachiev ,searchconfer ,setsearchconfer,} = useContext(Context);
+  
+      const applyFilter = () => {
+        let Copy =achievements.slice();
+        if (showsearch && searchachiev) {
+          Copy = Copy.filter(item => item.title.toLowerCase().includes(searchachiev.toLowerCase()))
+        }
+        setach(Copy)
+      }
+      useEffect(()=>{
+          applyFilter();
+      },[searchachiev,showsearch,achievements])
 
-  if (achievements.length === 0) {
+      useEffect(() => {
+          if (achievements && achievements.length > 0) {
+            setach(achievements);
+          }
+        }, [achievements]); 
+
+  if (ach.length === 0) {
     return (
       <div className="my-10">
         <p className="text-center text-xl text-gray-600">Loading achievements...</p>
@@ -29,7 +49,7 @@ const Achievements = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {achievements.map((item, index) => (
+          {ach.map((item, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">{item.title}</h2>
               <p className="text-gray-600">{item.description}</p>

@@ -5,13 +5,18 @@ import { useNavigate } from "react-router-dom";
 export const Context = createContext();
 const ContextProvider = (props) => {
     const [Blogs, setBlogs] = useState([]);
-    const [search, setSearch] = useState('');
+    const [Search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [token, setToken] = useState('');
     const [Papers , setPapers] = useState([]);
     const [Conferences , setConferences] = useState([]);
     const [achievements , setachievements] = useState([]);
     const [Projects , setProjects] = useState([]);
+    const [showsearch , setshowsearch] = useState(false);
+    const [searchblog ,setsearchblog ] = useState('');
+    const [searchpapers ,setsearchpapers ] = useState('');
+    const [searchachiev ,setsearchachiev ] = useState('');
+    const [searchconfer ,setsearchconfer ] = useState('');
     const navigate = useNavigate();
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     useEffect(() => {
@@ -98,9 +103,11 @@ const ContextProvider = (props) => {
         }
     }, [token]);
     const value = {
-        search, setSearch, showSearch, setShowSearch,
+        Search, setSearch, showSearch, setShowSearch,
         navigate, backendUrl,
-        setToken, token,Blogs,Papers,Conferences ,achievements ,Projects
+        setToken, token,Blogs,Papers,Conferences ,achievements ,Projects ,showsearch , setshowsearch 
+        , searchblog ,setsearchblog , searchpapers ,setsearchpapers ,
+        searchachiev ,setsearchachiev ,searchconfer ,setsearchconfer,
     };
     return (
         <Context.Provider value={value}>

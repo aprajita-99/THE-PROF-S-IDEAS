@@ -5,12 +5,25 @@ import PaperCard from '../components/PaperCard';
 
 const ResearchPapers = () => {
   const { Papers } = useContext(Context);
-  console.log(Papers);
+  const { Search, setSearch, showsearch, setshowsearch, searchblog ,setsearchblog , searchpapers ,setsearchpapers ,
+        searchachiev ,setsearchachiev ,searchconfer ,setsearchconfer,} = useContext(Context);
   const [latestPapers, setLatestPapers] = useState([]);
+
+  const applyFilter = () => {
+      let Copy =Papers.slice();
+      if (showsearch && searchpapers) {
+        Copy = Copy.filter(item => item.name.toLowerCase().includes(searchpapers.toLowerCase()))
+      }
+      setLatestPapers(Copy)
+    }
+    useEffect(()=>{
+        applyFilter();
+    },[searchpapers,showsearch,Papers])
 
   useEffect(() => {
     if (Papers && Papers.length > 0) {
-      setLatestPapers(Papers);    }
+      setLatestPapers(Papers);
+    }
   }, [Papers]);
 
   if (Papers.length === 0) {
@@ -23,8 +36,8 @@ const ResearchPapers = () => {
 
   return (
     <div className="my-10">
-      <Title text="Research Papers" />
-      <div className="gap-4 gap-y-6">
+      <Title text="Research Papers"/>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {latestPapers.map((paper, index) => (
           <PaperCard
             key={index}
@@ -40,3 +53,4 @@ const ResearchPapers = () => {
 };
 
 export default ResearchPapers;
+

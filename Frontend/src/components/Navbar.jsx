@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import {assets} from '../assets/assets'
-import {Link, NavLink } from 'react-router-dom'
+import {Link, NavLink ,useLocation } from 'react-router-dom'
 import {Context} from '../context/Context';
 const Navbar = () => {
+    const location = useLocation();
     const [visible,setVisible] = useState(false);
-    const {navigate, backendUrl,setToken, token} = useContext(Context);
+    const {navigate,showsearch,setshowsearch ,backendUrl,setToken, token} = useContext(Context);
     const logout = () => {
         navigate('/login')
         localStorage.removeItem('token')
@@ -50,6 +51,7 @@ const Navbar = () => {
         
       </ul>
       <div className='flex items-center gap-6'>
+      <img onClick={()=> { setshowsearch(true);(location == '/')?navigate('/Projects'):navigate(location)}} src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
             <div className='group relative'>
                 <img onClick={()=> token ? null : navigate('/login') } className='w-5 cursor-pointer' src={assets.profile_icon} alt="" />
                 {token && 

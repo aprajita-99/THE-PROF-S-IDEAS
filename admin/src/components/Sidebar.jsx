@@ -4,45 +4,75 @@ import { assets } from '../assets/assets'
 
 const Sidebar = () => {
   return (
-    <div className='w-[18%] min-h-screen border-r-2'>
+    <div className='w-[18%] min-h-screen bg-white text-black border-r-2'>
         <div className='flex flex-col gap-4 pt-6 pl-[20%] text-[15px]'>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addBlogs">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/addBlogs"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Blogs</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/listblogs">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/listblogs"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
-                <p className='hidden md:block'>Blogs list</p>
+                <p className='hidden md:block'>Blogs List</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addProjects">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/addProjects"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Projects</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/ListProjects">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/ListProjects"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>List Projects</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addResearchPapers">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/addResearchPapers"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Research Papers</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/listResearchPapers">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/listResearchPapers"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>List Research Papers</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addConferences">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/addConferences"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Conferences</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/ListConferences">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/ListConferences"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>List Conferences</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/AddAchievements">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/AddAchievements"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Achievements</p>
             </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/ListAchievements">
+            <NavLink 
+              className='flex items-center gap-3 border border-gray-500 border-r-0 px-4 py-3 rounded-l-lg hover:bg-gray-700 transition-all'
+              to="/ListAchievements"
+            >
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Achievements List</p>
             </NavLink>
@@ -50,4 +80,5 @@ const Sidebar = () => {
     </div>
   )
 }
+
 export default Sidebar

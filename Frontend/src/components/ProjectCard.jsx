@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProjectCard = ({ id, image, title, description }) => {
   return (
-    <Link onClick={() => scrollTo(0, 0)} className='text-gray-700 cursor-pointer'>
+    <Link to={`/Projects/${id}`} onClick={() => scrollTo(0, 0)} className='text-gray-700 cursor-pointer'>
       <div className='overflow-hidden w-full h-[300px]'>
         {/* This div is the card's image container */}
         <img 

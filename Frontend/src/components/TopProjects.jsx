@@ -4,11 +4,11 @@ import Title from './Title';
 import ProjectCard from './ProjectCard';
 
 const TopProjects =()=>{
-    const {projects} = useContext(Context);
+    const {Projects} = useContext(Context);
     const [TopProjects,setTopProjects] = useState([]);
     useEffect(()=>{
-        setTopProjects(projects.slice(0,5));
-    },[projects])
+        setTopProjects(Projects.slice(0,5));
+    },[Projects])
     
   return (
     <div className='my-10'>
@@ -23,7 +23,7 @@ const TopProjects =()=>{
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
         {
           TopProjects.map((item,index)=>(
-            <ProjectCard key={index} id={item._id} image={item.image} title={item.title} description={item.description} />
+            <ProjectCard key={index} id={item._id} image={item.imageUrl} title={item.title} description={item.description} />
           ))
         }
       </div>

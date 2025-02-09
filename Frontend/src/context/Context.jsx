@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export const Context = createContext();
-import { projects } from '../assets/assets';
+
 
 const ContextProvider = (props) => {
     const [Blogs, setBlogs] = useState([]);
@@ -13,6 +13,7 @@ const ContextProvider = (props) => {
     const [Papers , setPapers] = useState([]);
     const [Conferences , setConferences] = useState([]);
     const [achievements , setachievements] = useState([]);
+    const [Projects , setProjects] = useState([]);
     const navigate = useNavigate();
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -83,6 +84,23 @@ const ContextProvider = (props) => {
     }, [backendUrl]);
 
     useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await axios.get(`${backendUrl}/api/projects`); // Check what data you are getting
+                if (response.data) {
+                    console.log(response.data);
+                    setProjects(response.data); 
+                                } else {
+                    toast.error(response.data.message);
+                }
+            } catch (error) {
+                toast.error("Failed to fetch.");
+            }
+        };
+        fetchProjects();
+    }, [backendUrl]);
+
+    useEffect(() => {
         if (!token && localStorage.getItem('token')) {
             setToken(localStorage.getItem('token'));
         }
@@ -91,7 +109,7 @@ const ContextProvider = (props) => {
     const value = {
         search, setSearch, showSearch, setShowSearch,
         navigate, backendUrl,
-        setToken, token, projects,Blogs,Papers,Conferences ,achievements
+        setToken, token,Blogs,Papers,Conferences ,achievements ,Projects
     };
 
     return (

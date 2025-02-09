@@ -14,7 +14,7 @@ import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import TeachingExperience from './pages/TeachingExperience'
+import ProjectDetailed from './pages/ProjectDetailed'
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/Blogs' element={<Blogs />} />
         <Route path='/Awards' element={<Awards />} />
-        <Route path='/TeachingExperience' element={<TeachingExperience />} />
+        <Route path='/Projects/:id' element = {<ProjectDetailed/>}/>
       </Routes>
       <Footer />
     </div>

@@ -15,6 +15,7 @@ import ListResearchPapers from './pages/ListResearchPapers'
 import ListConferences from './pages/ListConferences'
 import AddAchievements from './pages/AddAchievements'
 import ListAchievements from './pages/ListAchievements'
+import ListProjects from './pages/ListProjects';
 
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
@@ -38,6 +39,7 @@ const App = () => {
                 <Route path='/addBlogs' element={<AddBlogs token={token}/>} />
                 <Route path='/listblogs' element={<ListBlogs token={token}/>} />
                 <Route path='/addProjects' element={<AddProjects token={token}/>} />
+                <Route path='/ListProjects' element={<ListProjects token={token}/>} />
                 <Route path='/addResearchPapers' element={<AddResearchPapers token={token}/>} />
                 <Route path='/listResearchPapers' element={<ListResearchPapers token={token}/>} />
                 <Route path='/addConferences' element={<AddConferences token={token}/>} />

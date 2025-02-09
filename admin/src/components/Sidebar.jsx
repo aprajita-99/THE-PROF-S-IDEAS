@@ -18,6 +18,10 @@ const Sidebar = () => {
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Projects</p>
             </NavLink>
+            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/ListProjects">
+                <img className='w-5 h-5' src={assets.add_icon} alt="" />
+                <p className='hidden md:block'>List Projects</p>
+            </NavLink>
             <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addResearchPapers">
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Add Research Papers</p>
@@ -41,10 +45,6 @@ const Sidebar = () => {
             <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/ListAchievements">
                 <img className='w-5 h-5' src={assets.add_icon} alt="" />
                 <p className='hidden md:block'>Achievements List</p>
-            </NavLink>
-            <NavLink className='flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l' to="/addAwards">
-                <img className='w-5 h-5' src={assets.add_icon} alt="" />
-                <p className='hidden md:block'>Add Awards</p>
             </NavLink>
         </div>
     </div>

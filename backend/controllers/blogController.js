@@ -1,5 +1,4 @@
 import blogModel from '../models/blogModel.js'
-
 const addBlog = async (req, res) => {
     try {
       const { title, description, author } = req.body;

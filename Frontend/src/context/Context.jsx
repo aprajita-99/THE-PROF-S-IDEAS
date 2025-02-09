@@ -3,8 +3,6 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export const Context = createContext();
-
-
 const ContextProvider = (props) => {
     const [Blogs, setBlogs] = useState([]);
     const [search, setSearch] = useState('');
@@ -15,14 +13,13 @@ const ContextProvider = (props) => {
     const [achievements , setachievements] = useState([]);
     const [Projects , setProjects] = useState([]);
     const navigate = useNavigate();
-
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get(`${backendUrl}/api/blog/`); // Check what data you are getting
+                const response = await axios.get(`${backendUrl}/api/blog/`);
                 if (response.data) {
-                    setBlogs(response.data); // Assuming blogs are in response.data.blogs
+                    setBlogs(response.data);
                 } else {
                     toast.error(response.data.message);
                 }
@@ -32,11 +29,10 @@ const ContextProvider = (props) => {
         };
         fetchBlogs();
     }, [backendUrl]);
-
     useEffect(() => {
         const fetchPapers = async () => {
             try {
-                const response = await axios.get(`${backendUrl}/api/researchPaper`); // Check what data you are getting
+                const response = await axios.get(`${backendUrl}/api/researchPaper`);
                 if (response.data) {
                     setPapers(response.data.papers); 
                                 } else {
@@ -48,11 +44,10 @@ const ContextProvider = (props) => {
         };
         fetchPapers();
     }, [backendUrl]);
-
     useEffect(() => {
         const fetchConferences = async () => {
             try {
-                const response = await axios.get(`${backendUrl}/api/conference`); // Check what data you are getting
+                const response = await axios.get(`${backendUrl}/api/conference`);
                 console.log(response.data.conferences);
                 if (response.data) {
                     setConferences(response.data.conferences); 
@@ -65,11 +60,10 @@ const ContextProvider = (props) => {
         };
         fetchConferences();
     }, [backendUrl]);
-
     useEffect(() => {
         const fetchachievements = async () => {
             try {
-                const response = await axios.get(`${backendUrl}/api/Achievement`); // Check what data you are getting
+                const response = await axios.get(`${backendUrl}/api/Achievement`);
                 if (response.data) {
                     console.log(response.data);
                     setachievements(response.data.achievements); 
@@ -82,11 +76,10 @@ const ContextProvider = (props) => {
         };
         fetchachievements();
     }, [backendUrl]);
-
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get(`${backendUrl}/api/projects`); // Check what data you are getting
+                const response = await axios.get(`${backendUrl}/api/projects`);
                 if (response.data) {
                     console.log(response.data);
                     setProjects(response.data); 
@@ -99,24 +92,20 @@ const ContextProvider = (props) => {
         };
         fetchProjects();
     }, [backendUrl]);
-
     useEffect(() => {
         if (!token && localStorage.getItem('token')) {
             setToken(localStorage.getItem('token'));
         }
     }, [token]);
-
     const value = {
         search, setSearch, showSearch, setShowSearch,
         navigate, backendUrl,
         setToken, token,Blogs,Papers,Conferences ,achievements ,Projects
     };
-
     return (
         <Context.Provider value={value}>
             {props.children}
         </Context.Provider>
     );
 };
-
 export default ContextProvider;

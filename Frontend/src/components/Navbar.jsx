@@ -4,7 +4,7 @@ import {Link, NavLink } from 'react-router-dom'
 import {Context} from '../context/Context';
 const Navbar = () => {
     const [visible,setVisible] = useState(false);
-    const { search, setSearch, showSearch, setShowSearch,navigate, backendUrl,setToken, token} = useContext(Context);
+    const {navigate, backendUrl,setToken, token} = useContext(Context);
     const logout = () => {
         navigate('/login')
         localStorage.removeItem('token')

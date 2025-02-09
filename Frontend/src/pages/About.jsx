@@ -11,7 +11,6 @@ const About = () => {
           className="w-48 h-auto rounded-full mt-5 mx-auto"
         />
       </header>
-
       <section className="mb-10">
         <h2 className="text-3xl font-semibold text-gray-800">Early Life</h2>
         <p className="text-lg text-gray-700 mt-4">
@@ -26,7 +25,6 @@ const About = () => {
           className="w-1/3 max-w-xl mx-auto mt-5 rounded-lg shadow-lg"
         />
       </section>
-
       <section className="mb-10">
         <h2 className="text-3xl font-semibold text-gray-800">Major Achievements</h2>
         <ul className="list-disc pl-6 mt-4 text-lg text-gray-700 space-y-2">
@@ -41,7 +39,6 @@ const About = () => {
           className="w-1/3 max-w-xl mx-auto mt-5 rounded-lg shadow-lg"
         />
       </section>
-
       <section className="mb-10">
         <h2 className="text-3xl font-semibold text-gray-800">Philosophy and Legacy</h2>
         <p className="text-lg text-gray-700 mt-4">
@@ -51,7 +48,6 @@ const About = () => {
           Einstein’s contributions have forever altered the course of physics and our understanding of the universe. His name remains synonymous with brilliance, and his work continues to inspire generations of scientists.
         </p>
       </section>
-
       <footer className="text-center mt-10 text-sm text-gray-600">
         <p>
           To explore more about Albert Einstein's life and work, visit his{' '}
@@ -63,5 +59,4 @@ const About = () => {
     </div>
   );
 };
-
 export default About;

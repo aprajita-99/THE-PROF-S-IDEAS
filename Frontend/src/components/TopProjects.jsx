@@ -18,8 +18,6 @@ const TopProjects =()=>{
            Here are some of my best Projects.
           </p>
       </div>
-
-      {/* Rendering Projects */}
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
         {
           TopProjects.map((item,index)=>(
@@ -30,5 +28,4 @@ const TopProjects =()=>{
     </div>
   )
 }
-
 export default TopProjects

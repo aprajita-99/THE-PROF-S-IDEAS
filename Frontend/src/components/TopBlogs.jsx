@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/Context';
 import Title from './Title';
 import BlogCard from './BlogCard';
-
 const TopBlogs = () => {
   const { Blogs } = useContext(Context);
   console.log(Blogs);
@@ -13,7 +12,6 @@ const TopBlogs = () => {
       setLatestBlogs(Blogs.slice(0, 2));
     }
   }, [Blogs]);
-
   if (Blogs.length === 0) {
     return (
       <div className="my-10">
@@ -21,7 +19,6 @@ const TopBlogs = () => {
       </div>
     );
   }
-
   return (
     <div className="my-10">
       <div className="text-center py-8 text-3xl">

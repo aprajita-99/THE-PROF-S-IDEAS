@@ -2,8 +2,8 @@ import blogModel from '../models/blogModel.js'
 
 const addBlog = async (req, res) => {
     try {
-      const { title, content, author } = req.body;
-      const newBlog = new blogModel({ title, content, author });
+      const { title, description, author } = req.body;
+      const newBlog = new blogModel({ title, description, author });
       await newBlog.save();
       res.status(201).json(newBlog);
     } catch (error) {
